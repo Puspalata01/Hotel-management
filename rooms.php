@@ -19,7 +19,8 @@
 
         body {
             font-family: 'Poppins', sans-serif;
-            background-color: #fdfaf5;
+            background-color: #fbf1e7;
+            color: #2f2a25;
         }
 
         
@@ -84,12 +85,12 @@
             border: none;
             border-radius: 16px;
             overflow: hidden;
-            box-shadow: 0 8px 30px rgba(0,0,0,0.10);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.08);
             transition: transform 0.35s, box-shadow 0.35s;
             text-decoration: none;
             color: inherit;
             display: block;
-            background: white;
+            background: #fff7ee;
         }
         .room-card:hover {
             transform: translateY(-8px);
@@ -186,8 +187,9 @@
                 <li class="nav-item"><a class="nav-link" href="index.php">Home</a></li>
                 <li class="nav-item"><a class="nav-link active" href="rooms.php">Rooms</a></li>
                 <li class="nav-item"><a class="nav-link" href="services.php">Services</a></li>
+                 <li class="nav-item"><a class="nav-link active" href="gallery.php">Gallery</a></li>
                 <li class="nav-item"><a class="nav-link" href="contact.php">Contact</a></li>
-                <li class="nav-item"><a class="nav-link" href="about.php">About Us</a></li>
+                
             </ul>
         </div>
     </div>
@@ -221,7 +223,7 @@ $rooms = [
     ["name"=>"Ocean Breeze",     "price"=>"8,500",  "rank"=>"4.8", "img"=>"https://images.unsplash.com/photo-1590490360182-c33d57733427", "desc"=>"Wake up to the sound of waves with floor-to-ceiling ocean-view windows."],
     ["name"=>"Garden Villa",     "price"=>"15,000", "rank"=>"4.7", "img"=>"https://images.unsplash.com/photo-1595576508898-0ad5c879a061", "desc"=>"A private villa nestled in lush gardens with a plunge pool and outdoor dining."],
     ["name"=>"Executive Club",   "price"=>"9,000",  "rank"=>"4.6", "img"=>"https://images.unsplash.com/photo-1631049307264-da0ec9d70304", "desc"=>"Tailored for the discerning traveller — club lounge access and express check-in."],
-    ["name"=>"Family Haven",     "price"=>"10,500", "rank"=>"4.9", "img"=>"https://images.unsplash.com/photo-1591088398332-8a77d3996150", "desc"=>"Generously spacious, with two bedrooms, a playroom corner, and family-friendly amenities."],
+    ["name"=>"Family Haven",     "price"=>"10,500", "rank"=>"4.9", "img"=>"https://images.unsplash.com/photo-1522708323590-d24dbb6b0267", "desc"=>"Generously spacious, with two bedrooms, a playroom corner, and family-friendly amenities."],
     ["name"=>"Honeymoon Suite",  "price"=>"18,000", "rank"=>"5.0", "img"=>"https://images.unsplash.com/photo-1618773928121-c32242e63f39", "desc"=>"Rose petal welcome, champagne, and a private jacuzzi for two — romance perfected."],
     ["name"=>"Studio Loft",      "price"=>"6,500",  "rank"=>"4.4", "img"=>"https://images.unsplash.com/photo-1502672260266-1c1ef2d93688", "desc"=>"A chic open-plan loft with high ceilings, contemporary art, and a fully equipped kitchenette."],
     ["name"=>"Skyline Room",     "price"=>"11,000", "rank"=>"4.7", "img"=>"https://images.unsplash.com/photo-1618773928121-c32242e63f39", "desc"=>"Sweeping city skyline views from the higher floors — modern style meets ultimate comfort."],

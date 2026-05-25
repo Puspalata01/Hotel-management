@@ -182,13 +182,13 @@
 
 .rooms-section {
     padding: 150px 0 100px 0;
-    background: #fdfaf5; /* Elegant cream/off-white for 'normal fancy' */
+    background: #111c01; /* Elegant cream/off-white for 'normal fancy' */
     background-image: radial-gradient(#d4af37 0.5px, transparent 0.5px);
     background-size: 30px 30px;
 }
 
 .section-title {
-    color: #0f172b;
+    color: #bdc4d7;
     font-family: 'Bodoni Moda SC', serif;
     font-size: 40px;
     margin-bottom: 40px;
