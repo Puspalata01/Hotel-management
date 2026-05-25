@@ -791,6 +791,154 @@
         <div class="swiper-pagination"></div>
     </div>
 </section>
+<!-- ===== SERVICES SECTION START ===== -->
+
+<style>
+.services-section {
+  padding: 100px 0;
+  background: #f9f9f9;
+}
+
+/* LEFT */
+.services-intro span {
+  color: #facc15;
+  font-weight: 600;
+}
+
+.services-intro h2 {
+  font-size: 40px;
+  font-weight: bold;
+  color: #000000;
+}
+
+.services-intro p {
+  color: #555;
+}
+
+/* SWIPER */
+.serviceSwiper {
+  width: 290px;
+  height: 350px;
+  
+}
+
+/* CARD */
+.service-slide-card {
+  height: 100%;
+  border-radius: 18px;
+  padding: 30px;
+  text-align: center;
+  background: #012c1d;
+  
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* ICON */
+.service-icon {
+  font-size: 35px;
+  color: #facc15;
+  margin-bottom: 15px;
+}
+
+/* TEXT */
+.service-slide-card h3 {
+  color: #fff;
+  font-size: 20px;
+}
+
+.service-slide-card p {
+  color: #ffffff;
+  font-size: 14px;
+}
+
+.service-action {
+  margin-top: 15px;
+  color: #facc15;
+  font-weight: 500;
+}
+</style>
+
+<section class="services-section">
+  <div class="container">
+    <div class="row align-items-center">
+
+      <!-- LEFT -->
+      <div class="col-lg-6">
+        <div class="services-intro">
+          <span>Our Services</span>
+          <h2>Experience Unmatched Luxury</h2>
+          <p>From world-class dining to spa treatments, we elevate your stay with premium comfort and unforgettable experiences.</p>
+          <a href="services.php" class="btn btn-dark mt-3">Explore Services</a>
+        </div>
+      </div>
+
+      <!-- RIGHT -->
+      <div class="col-lg-6 d-flex justify-content-center">
+        <div class="swiper serviceSwiper">
+          <div class="swiper-wrapper">
+
+            <div class="swiper-slide">
+              <div class="service-slide-card">
+                <div class="service-icon"><i class="bi bi-bell-fill"></i></div>
+                <h3>Concierge</h3>
+                <p>Personalized guest support.</p>
+               
+              </div>
+            </div>
+
+            <div class="swiper-slide">
+              <div class="service-slide-card">
+                <div class="service-icon"><i class="bi bi-house-door-fill"></i></div>
+                <h3>Housekeeping</h3>
+                <p>Clean and elegant rooms.</p>
+               
+              </div>
+            </div>
+
+            <div class="swiper-slide">
+              <div class="service-slide-card">
+                <div class="service-icon"><i class="bi bi-cup-hot-fill"></i></div>
+                <h3>Dining</h3>
+                <p>Luxury food experience.</p>
+               
+              </div>
+            </div>
+
+            <div class="swiper-slide">
+              <div class="service-slide-card">
+                <div class="service-icon"><i class="bi bi-heart-pulse-fill"></i></div>
+                <h3>Spa</h3>
+                <p>Relax & rejuvenate.</p>
+              
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Swiper JS (only if not already added) -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+
+<script>
+var swiper = new Swiper(".serviceSwiper", {
+  effect: "cards",
+  grabCursor: true,
+  loop: true,
+  autoplay: {
+    delay: 2500,
+    disableOnInteraction: false,
+  }
+});
+</script>
+
+<!-- ===== SERVICES SECTION END ===== -->
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
