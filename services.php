@@ -366,6 +366,35 @@
 
     }
 
+    /* --- Responsive Luxury Navbar --- */
+    @media(max-width:991px){
+        .navbar {
+            background-color: rgba(15, 23, 43, 0.98) !important;
+            padding: 12px 0;
+        }
+        .navbar-collapse {
+            background: rgba(15, 23, 43, 0.98);
+            padding: 20px;
+            border-radius: 12px;
+            margin-top: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        .nav-link {
+            margin-left: 0 !important;
+            padding: 10px 0 !important;
+            width: 100%;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            text-align: left;
+        }
+        .nav-link:last-child {
+            border-bottom: none;
+        }
+        .navbar-nav {
+            width: 100%;
+            align-items: flex-start !important;
+        }
+    }
+
   </style>
 </head>
 
@@ -384,7 +413,7 @@
 
     <div class="collapse navbar-collapse" id="navMenu">
 
-      <ul class="navbar-nav ms-auto align-items-lg-center">
+      <ul class="navbar-nav ms-auto align-items-lg-center align-items-start">
 
         <li class="nav-item">
           <a class="nav-link" href="index.php">Home</a>
@@ -684,13 +713,7 @@
 
 </section>
 
-<!-- FOOTER -->
-
-<footer>
-
-  © 2026 <span>Taj Hotel</span>. All Rights Reserved.
-
-</footer>
+<?php include 'footer.php'; ?>
 
 <!-- Bootstrap JS -->
 

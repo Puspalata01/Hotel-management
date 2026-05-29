@@ -1,3 +1,4 @@
+<?php include 'gallery-data.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -152,14 +153,34 @@
             .gallery-item.hidden-card { display: none !important; }
         }
 
-        footer {
-            background: #0f172b;
-            color: rgba(255,255,255,0.6);
-            text-align: center;
-            padding: 30px;
-            font-size: 13px;
+        /* --- Responsive Luxury Navbar --- */
+        @media(max-width:991px){
+            .navbar {
+                background-color: rgba(15, 23, 43, 0.98) !important;
+                padding: 12px 0;
+            }
+            .navbar-collapse {
+                background: rgba(15, 23, 43, 0.98);
+                padding: 20px;
+                border-radius: 12px;
+                margin-top: 10px;
+                border: 1px solid rgba(255, 255, 255, 0.05);
+            }
+            .nav-link {
+                margin-left: 0 !important;
+                padding: 10px 0 !important;
+                width: 100%;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+                text-align: left;
+            }
+            .nav-link:last-child {
+                border-bottom: none;
+            }
+            .navbar-nav {
+                width: 100%;
+                align-items: flex-start !important;
+            }
         }
-        footer a { color: var(--gold); text-decoration: none; }
     </style>
 </head>
 <body>
@@ -171,7 +192,7 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ms-auto align-items-center">
+            <ul class="navbar-nav ms-auto align-items-lg-center align-items-start">
                 <li class="nav-item"><a class="nav-link" href="index.php">Home</a></li>
                 <li class="nav-item"><a class="nav-link" href="rooms.php">Rooms</a></li>
                 <li class="nav-item"><a class="nav-link" href="services.php">Services</a></li>
@@ -207,115 +228,31 @@
 
         <div class="swiper main-gallery-swiper">
             <div class="swiper-wrapper hybrid-gallery-wrapper">
-                <!-- Gallery Item 1 -->
-                <div class="swiper-slide gallery-item" data-category="rooms">
+                <?php foreach($gallery_items as $item): ?>
+                <!-- Gallery Item -->
+                <div class="swiper-slide gallery-item" data-category="<?php echo $item['category']; ?>">
                     <div class="luxury-gallery-card">
-                        <a href="https://images.unsplash.com/photo-1590490360182-c33d57733427?w=1200" class="glightbox lightbox-trigger-btn">
+                        <a href="<?php echo $item['img']; ?>?auto=format&fit=crop&q=80&w=1200" class="glightbox lightbox-trigger-btn">
                             <i class="bi bi-arrows-fullscreen"></i>
                         </a>
                         <div class="img-wrapper">
-                            <img src="https://images.unsplash.com/photo-1590490360182-c33d57733427?w=600" alt="Presidential Suite" loading="lazy">
+                            <img src="<?php echo $item['img']; ?>?auto=format&fit=crop&q=80&w=600" alt="<?php echo htmlspecialchars($item['title']); ?>" loading="lazy">
                         </div>
                         <div class="card-overlay-cta">
-                            <h4 class="text-white brand-serif mb-2 fs-5">Presidential Suite</h4>
-                            <p class="text-white-50 small mb-3">Expansive panoramic views featuring custom artisan furniture.</p>
-                            <a href="rooms.php" class="btn btn-light btn-sm rounded-pill py-2 text-uppercase fw-bold-custom">Book This Suite</a>
+                            <h4 class="text-white brand-serif mb-2 fs-5"><?php echo $item['title']; ?></h4>
+                            <p class="text-white-50 small mb-3"><?php echo $item['desc']; ?></p>
+                            <a href="<?php echo $item['link']; ?>" class="btn btn-light btn-sm rounded-pill py-2 text-uppercase fw-bold-custom"><?php echo $item['action_label']; ?></a>
                         </div>
                     </div>
                 </div>
-
-                <!-- Gallery Item 2 -->
-                <div class="swiper-slide gallery-item" data-category="dining">
-                    <div class="luxury-gallery-card">
-                        <a href="https://images.unsplash.com/photo-1544148103-0773bf10d330?w=1200" class="glightbox lightbox-trigger-btn">
-                            <i class="bi bi-arrows-fullscreen"></i>
-                        </a>
-                        <div class="img-wrapper">
-                            <img src="https://images.unsplash.com/photo-1544148103-0773bf10d330?w=600" alt="Lumiere Restaurant" loading="lazy">
-                        </div>
-                        <div class="card-overlay-cta">
-                            <h4 class="text-white brand-serif mb-2 fs-5">Lumière Restaurant</h4>
-                            <p class="text-white-50 small mb-3">Michelin-starred sensory dining journeys curated by world masters.</p>
-                            <a href="services.php" class="btn btn-light btn-sm rounded-pill py-2 text-uppercase fw-bold-custom">Reserve Table</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Gallery Item 3 -->
-                <div class="swiper-slide gallery-item" data-category="wellness">
-                    <div class="luxury-gallery-card">
-                        <a href="https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=1200" class="glightbox lightbox-trigger-btn">
-                            <i class="bi bi-arrows-fullscreen"></i>
-                        </a>
-                        <div class="img-wrapper">
-                            <img src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=600" alt="Soma Wellness Spa" loading="lazy">
-                        </div>
-                        <div class="card-overlay-cta">
-                            <h4 class="text-white brand-serif mb-2 fs-5">Soma Wellness Spa</h4>
-                            <p class="text-white-50 small mb-3">Therapeutic luxury rituals using ancestral organic methodologies.</p>
-                            <a href="services.php" class="btn btn-light btn-sm rounded-pill py-2 text-uppercase fw-bold-custom">Book Treatment</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- More items for a full gallery look -->
-                <div class="swiper-slide gallery-item" data-category="rooms">
-                    <div class="luxury-gallery-card">
-                        <a href="https://images.unsplash.com/photo-1566665797739-1674de7a421a?w=1200" class="glightbox lightbox-trigger-btn">
-                            <i class="bi bi-arrows-fullscreen"></i>
-                        </a>
-                        <div class="img-wrapper">
-                            <img src="https://images.unsplash.com/photo-1566665797739-1674de7a421a?w=600" alt="Royal Penthouse" loading="lazy">
-                        </div>
-                        <div class="card-overlay-cta">
-                            <h4 class="text-white brand-serif mb-2 fs-5">Royal Penthouse</h4>
-                            <p class="text-white-50 small mb-3">The ultimate height of sophistication and privacy.</p>
-                            <a href="rooms.php" class="btn btn-light btn-sm rounded-pill py-2 text-uppercase fw-bold-custom">View Penthouse</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="swiper-slide gallery-item" data-category="dining">
-                    <div class="luxury-gallery-card">
-                        <a href="https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?w=1200" class="glightbox lightbox-trigger-btn">
-                            <i class="bi bi-arrows-fullscreen"></i>
-                        </a>
-                        <div class="img-wrapper">
-                            <img src="https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?w=600" alt="Bar & Lounge" loading="lazy">
-                        </div>
-                        <div class="card-overlay-cta">
-                            <h4 class="text-white brand-serif mb-2 fs-5">Azure Lounge</h4>
-                            <p class="text-white-50 small mb-3">Handcrafted cocktails with views that touch the horizon.</p>
-                            <a href="services.php" class="btn btn-light btn-sm rounded-pill py-2 text-uppercase fw-bold-custom">Learn More</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="swiper-slide gallery-item" data-category="wellness">
-                    <div class="luxury-gallery-card">
-                        <a href="https://images.unsplash.com/photo-1576013551627-0cc20b96c2a7?w=1200" class="glightbox lightbox-trigger-btn">
-                            <i class="bi bi-arrows-fullscreen"></i>
-                        </a>
-                        <div class="img-wrapper">
-                            <img src="https://images.unsplash.com/photo-1576013551627-0cc20b96c2a7?w=600" alt="Infinity Pool" loading="lazy">
-                        </div>
-                        <div class="card-overlay-cta">
-                            <h4 class="text-white brand-serif mb-2 fs-5">Infinity Pool</h4>
-                            <p class="text-white-50 small mb-3">Where the water meets the sky in perfect harmony.</p>
-                            <a href="services.php" class="btn btn-light btn-sm rounded-pill py-2 text-uppercase fw-bold-custom">View Pool</a>
-                        </div>
-                    </div>
-                </div>
-
+                <?php endforeach; ?>
             </div>
             <div class="swiper-pagination d-lg-none"></div>
         </div>
     </div>
 </section>
 
-<footer>
-    &copy; <?php echo date('Y'); ?> <a href="index.php">Taj Hotel</a>. All rights reserved.
-</footer>
+<?php include 'footer.php'; ?>
 
 <!-- Scripts -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>

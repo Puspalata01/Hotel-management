@@ -18,9 +18,9 @@
     
     <link rel="stylesheet"
         href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
-
-   
-    <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda+SC:wght@400;700&family=Poppins:wght@300;400;500;600;700&display=swap"
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
+    
+    <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda+SC:wght@400;700&family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
 
     <style>
@@ -85,7 +85,7 @@
             width: 100%;
             height: 100%;
 
-            background: rgba(0,0,0,0.5);
+            
 
             top: 0;
             left: 0;
@@ -182,13 +182,13 @@
 
 .rooms-section {
     padding: 150px 0 100px 0;
-    background: #111c01; /* Elegant cream/off-white for 'normal fancy' */
+    background: #000000; /* Elegant cream/off-white for 'normal fancy' */
     background-image: radial-gradient(#d4af37 0.5px, transparent 0.5px);
     background-size: 30px 30px;
 }
 
 .section-title {
-    color: #bdc4d7;
+    color: #ffc107;
     font-family: 'Bodoni Moda SC', serif;
     font-size: 40px;
     margin-bottom: 40px;
@@ -209,7 +209,7 @@
     background-color: #fff;
     border-radius: 12px;
     overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  
     position: relative;
     border: 1px solid rgba(212, 175, 55, 0.2);
 }
@@ -261,6 +261,234 @@
     font-size: 14px;
     margin-bottom: 10px;
 }
+
+/* --- Responsive Luxury Navbar --- */
+@media(max-width:991px){
+    .navbar {
+        background-color: rgba(15, 23, 43, 0.98) !important;
+        padding: 12px 0;
+    }
+    .navbar-collapse {
+        background: rgba(15, 23, 43, 0.98);
+        padding: 20px;
+        border-radius: 12px;
+        margin-top: 10px;
+        border: 1px solid rgba(255, 255, 255, 0.05);
+    }
+    .nav-link {
+        margin-left: 0 !important;
+        padding: 10px 0 !important;
+        width: 100%;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        text-align: left;
+    }
+    .nav-link:last-child {
+        border-bottom: none;
+    }
+    .navbar-nav {
+        width: 100%;
+        align-items: flex-start !important;
+    }
+}
+
+/* --- Home Page Gallery Section --- */
+.home-gallery-section {
+    padding: 100px 0;
+    background: #ffefcf00;
+    border-top: 1px solid rgba(212, 175, 55, 0.15);
+}
+
+.home-gallery-title span {
+    color: #d4af37;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.home-gallery-title h2 {
+    font-family: 'Bodoni Moda SC', serif;
+    font-size: 40px;
+    color: #181717;
+    margin-top: 10px;
+    font-weight: 700;
+}
+
+.gallery-filter-btn-group .btn {
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    padding: 10px 24px;
+    font-size: 14px;
+    border-radius: 30px;
+    background: rgba(0, 0, 0, 0.04);
+    color: #191919;
+    transition: all 0.3s ease;
+    font-weight: 500;
+    font-family: 'Poppins', sans-serif;
+}
+
+.gallery-filter-btn-group .btn.active, .gallery-filter-btn-group .btn:hover {
+    background-color: #d4af37 !important;
+    color: #0b1220 !important;
+    border-color: #d4af37 !important;
+    box-shadow: 0 5px 15px rgba(212, 175, 55, 0.3);
+}
+
+.home-gallery-card {
+    position: relative;
+    border-radius: 16px;
+    overflow: hidden;
+    background: #fff;
+    height: 100%;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+    transition: transform 0.3s ease;
+    border: 1px solid rgba(0, 0, 0, 0.03);
+}
+
+.home-gallery-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+}
+
+.home-gallery-img-wrap {
+    position: relative;
+    overflow: hidden;
+    aspect-ratio: 4/3;
+}
+
+.home-gallery-img-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.home-gallery-card:hover .home-gallery-img-wrap img {
+    transform: scale(1.06);
+}
+
+.home-gallery-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, rgba(15, 44, 37, 0.95) 0%, rgba(15, 44, 37, 0.3) 100%);
+    opacity: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 24px;
+    transition: opacity 0.3s ease;
+    z-index: 2;
+}
+
+.home-gallery-card:hover .home-gallery-overlay {
+    opacity: 1;
+}
+
+.home-gallery-zoom {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: rgba(255, 255, 255, 0.95);
+    color: #0f2c25;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    z-index: 3;
+    opacity: 0;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.home-gallery-zoom:hover {
+    background-color: #d4af37;
+    color: #0f172b;
+    transform: scale(1.1);
+}
+
+.home-gallery-card:hover .home-gallery-zoom {
+    opacity: 1;
+}
+
+.home-gallery-overlay h4 {
+    color: #fff;
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    transform: translateY(20px);
+    transition: transform 0.35s ease;
+}
+
+.home-gallery-overlay p {
+    color: rgba(255,255,255,0.75);
+    font-size: 13px;
+    line-height: 1.6;
+    margin-bottom: 15px;
+    transform: translateY(20px);
+    transition: transform 0.35s ease 0.05s;
+}
+
+.home-gallery-overlay .btn-explore {
+    color: #0f172b;
+    background-color: #fff;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    border-radius: 30px;
+    padding: 8px 18px;
+    text-transform: uppercase;
+    text-decoration: none;
+    display: inline-block;
+    align-self: flex-start;
+    transition: all 0.3s ease;
+    transform: translateY(20px);
+    opacity: 0;
+    transition: transform 0.35s ease 0.1s, opacity 0.35s ease 0.1s;
+}
+
+.home-gallery-overlay .btn-explore:hover {
+    background-color: #d4af37;
+    color: #0f172b;
+    transform: translateY(20px) scale(1.05);
+}
+
+.home-gallery-card:hover .home-gallery-overlay h4,
+.home-gallery-card:hover .home-gallery-overlay p,
+.home-gallery-card:hover .home-gallery-overlay .btn-explore {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.home-gallery-item {
+    transition: opacity 0.4s ease, transform 0.4s ease, visibility 0.4s;
+}
+
+.home-gallery-item.hidden-card {
+    opacity: 0 !important;
+    transform: scale(0.8) !important;
+    position: absolute !important;
+    visibility: hidden !important;
+    pointer-events: none;
+}
+
+@media(max-width:991px){
+    .home-gallery-section {
+        padding: 70px 0;
+    }
+}
+
+.home-gallery-section .btn-outline-light:hover {
+    background-color: #d4af37 !important;
+    color: #fbfcff !important;
+    border-color: #d4af37 !important;
+    box-shadow: 0 5px 15px rgba(212, 175, 55, 0.3);
+}
     </style>
 
 </head>
@@ -290,7 +518,7 @@
             
             <div class="collapse navbar-collapse" id="navbarNav">
 
-                <ul class="navbar-nav ms-auto align-items-center">
+                <ul class="navbar-nav ms-auto align-items-lg-center align-items-start">
 
                     <li class="nav-item">
                         <a class="nav-link active" href="index.php">
@@ -796,7 +1024,7 @@
 <style>
 .services-section {
   padding: 100px 0;
-  background: #f9f9f9;
+  background: #111111; /* cream colour */
 }
 
 /* LEFT */
@@ -808,11 +1036,11 @@
 .services-intro h2 {
   font-size: 40px;
   font-weight: bold;
-  color: #000000;
+  color:  #ffffff;
 }
 
 .services-intro p {
-  color: #555;
+  color: #abaaaa;
 }
 
 /* SWIPER */
@@ -828,7 +1056,7 @@
   border-radius: 18px;
   padding: 30px;
   text-align: center;
-  background: #012c1d;
+  background: #025607;
   
   display: flex;
   flex-direction: column;
@@ -870,7 +1098,7 @@
           <span>Our Services</span>
           <h2>Experience Unmatched Luxury</h2>
           <p>From world-class dining to spa treatments, we elevate your stay with premium comfort and unforgettable experiences.</p>
-          <a href="services.php" class="btn btn-dark mt-3">Explore Services</a>
+          <a href="services.php" class="btn btn-y mt-3" style="background-color: #facc15; color: black;">Explore Services</a>
         </div>
       </div>
 
@@ -940,9 +1168,62 @@ var swiper = new Swiper(".serviceSwiper", {
 
 <!-- ===== SERVICES SECTION END ===== -->
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<?php include 'gallery-data.php'; ?>
+<!-- ===== VISUAL GALLERY SECTION START ===== -->
+<section class="home-gallery-section">
+    <div class="container text-center mb-5">
+        <div class="home-gallery-title">
+            <span>Visual Splendor</span>
+            <h2>A Glimpse of Absolute Luxury</h2>
+            <div class="mx-auto mt-3" style="width: 60px; height: 2px; background-color: #d4af37;"></div>
+        </div>
+    </div>
 
+    <div class="container">
+        <!-- Category Filter Tabs -->
+        <div class="d-flex justify-content-center gap-2 mb-5 flex-wrap gallery-filter-btn-group">
+            <button class="btn gallery-filter-btn active" data-filter="all">All Highlights</button>
+            <button class="btn gallery-filter-btn" data-filter="rooms">Suites & Villas</button>
+            <button class="btn gallery-filter-btn" data-filter="dining">Fine Dining</button>
+            <button class="btn gallery-filter-btn" data-filter="wellness">Wellness & Spa</button>
+        </div>
+
+        <!-- Gallery Grid -->
+        <div class="row g-4 justify-content-center">
+            <?php foreach($gallery_items as $item): ?>
+            <div class="col-md-6 col-lg-4 home-gallery-item" data-category="<?php echo $item['category']; ?>">
+                <div class="home-gallery-card">
+                    <!-- Lightbox Zoom Icon -->
+                    <a href="<?php echo $item['img']; ?>?auto=format&fit=crop&q=80&w=1200" class="home-glightbox home-gallery-zoom" data-gallery="home-gallery" data-title="<?php echo htmlspecialchars($item['title']); ?>" data-description="<?php echo htmlspecialchars($item['desc']); ?>">
+                        <i class="bi bi-arrows-fullscreen"></i>
+                    </a>
+                    
+                    <div class="home-gallery-img-wrap">
+                        <img src="<?php echo $item['img']; ?>?auto=format&fit=crop&q=80&w=600" alt="<?php echo htmlspecialchars($item['title']); ?>" loading="lazy">
+                    </div>
+                    
+                    <div class="home-gallery-overlay">
+                        <h4><?php echo $item['title']; ?></h4>
+                        <p><?php echo $item['desc']; ?></p>
+                        <a href="<?php echo $item['link']; ?>" class="btn-explore"><?php echo $item['action_label']; ?></a>
+                    </div>
+                </div>
+            </div>
+            <?php endforeach; ?>
+        </div>
+        
+        <div class="text-center mt-5">
+            <a href="gallery.php" class="btn btn-outline-light rounded-pill px-4 py-2 text-uppercase fw-semibold" style="letter-spacing: 1px; font-size: 13px; transition: all 0.3s ease; background: rgba(0, 0, 0, 0.3);color: #383737;">View Full Gallery <i class="bi bi-arrow-right ms-1"></i></a>
+        </div>
+    </div>
+</section>
+<!-- ===== VISUAL GALLERY SECTION END ===== -->
+
+<?php include 'footer.php'; ?>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/mcstudios/glightbox/dist/js/glightbox.min.js"></script>
 <script>
     
     var heroSwiper = new Swiper(".hero-slider", {
@@ -971,6 +1252,29 @@ var swiper = new Swiper(".serviceSwiper", {
             el: ".swiper-pagination",
             clickable: true,
         },
+    });
+
+    // Initialize Home GLightbox
+    const homeLightbox = GLightbox({ selector: '.home-glightbox' });
+
+    // Home Gallery Filtering Logic
+    document.querySelectorAll('.gallery-filter-btn').forEach(btn => {
+        btn.addEventListener('click', function(e) {
+            document.querySelector('.gallery-filter-btn.active').classList.remove('active');
+            this.classList.add('active');
+
+            const filterValue = this.getAttribute('data-filter');
+            const items = document.querySelectorAll('.home-gallery-item');
+
+            items.forEach(item => {
+                const category = item.getAttribute('data-category');
+                if (filterValue === 'all' || category === filterValue) {
+                    item.classList.remove('hidden-card');
+                } else {
+                    item.classList.add('hidden-card');
+                }
+            });
+        });
     });
 </script>
 </body>

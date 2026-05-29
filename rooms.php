@@ -163,14 +163,34 @@
         }
 
        
-        footer {
-            background: #0f172b;
-            color: rgba(255,255,255,0.6);
-            text-align: center;
-            padding: 22px;
-            font-size: 13px;
+        /* --- Responsive Luxury Navbar --- */
+        @media(max-width:991px){
+            .navbar {
+                background-color: rgba(15, 23, 43, 0.98) !important;
+                padding: 12px 0;
+            }
+            .navbar-collapse {
+                background: rgba(15, 23, 43, 0.98);
+                padding: 20px;
+                border-radius: 12px;
+                margin-top: 10px;
+                border: 1px solid rgba(255, 255, 255, 0.05);
+            }
+            .nav-link {
+                margin-left: 0 !important;
+                padding: 10px 0 !important;
+                width: 100%;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+                text-align: left;
+            }
+            .nav-link:last-child {
+                border-bottom: none;
+            }
+            .navbar-nav {
+                width: 100%;
+                align-items: flex-start !important;
+            }
         }
-        footer a { color: #d4af37; text-decoration: none; }
     </style>
 </head>
 <body>
@@ -183,7 +203,7 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ms-auto align-items-center">
+            <ul class="navbar-nav ms-auto align-items-lg-center align-items-start">
                 <li class="nav-item"><a class="nav-link" href="index.php">Home</a></li>
                 <li class="nav-item"><a class="nav-link active" href="rooms.php">Rooms</a></li>
                 <li class="nav-item"><a class="nav-link" href="services.php">Services</a></li>
@@ -264,9 +284,7 @@ foreach($rooms as $room):
     </div>
 </section>
 
-<footer>
-    &copy; <?php echo date('Y'); ?> <a href="index.php">Taj Hotel</a>. All rights reserved.
-</footer>
+<?php include 'footer.php'; ?>
 
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
